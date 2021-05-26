@@ -1,0 +1,30 @@
+import os
+import glob
+cookie_del = glob.glob("config/*cookie.json")
+os.remove(cookie_del[0])
+
+
+from instabot import Bot
+
+bot = Bot()
+
+#-------Login info---------#
+bot.login(username = "#######", password = '#######')
+
+#-------Uploading an image ---------#
+
+bot.upload_photo("IMG_20210505_081502.jpg", caption="maldives vibes")
+
+#-------following someone on instagram ---------#
+bot.follow("s_shwetzzz")
+
+#-------sending a message---------#
+bot.send_message(" am a chatbot , my master is arti patel , please dont reply to this",["s_shwetzzz","craft.palette","baldeochoudhary"])
+
+#-------getting my followers---------#
+
+follower = bot.get_user_followers('artypatel')
+for fellas in follower:
+    print(fellas)
+
+#bot.unfollow_everyone()
